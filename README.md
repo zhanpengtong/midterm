@@ -15,6 +15,8 @@ So the first few numbers in the Fibonacci series would be: 0, 1, 1, 2, 3, 5, 8, 
 
 There are many ways to implement the Fibonacci sequence using code, and each method is discussed in more detail below. However, for the implementation I used in this report, the table below represents Big-O values.
 
+![Big-O](https://user-images.githubusercontent.com/113164203/222501648-5cab10e5-9ebd-427e-b145-9f278e5a4468.PNG)
+
 
 ## Empirical Data & Discussion 
 
