@@ -42,6 +42,7 @@ For this analysis, I selected Python for my second language. Python is a well-kn
 For all empirical results, I maximize n to n=40. This allows for timely code execution while still being able to run multiple iterations.
 
 As a rule of thumb, the recursive versions of C and Python time out much faster than the other versions. As follows.
+![Recursive](https://user-images.githubusercontent.com/113164203/223063445-24264b39-6200-4a74-b8b1-7ae13a75b269.png)
 
 ## Language Analysis
 
