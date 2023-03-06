@@ -89,9 +89,33 @@ For the C language, I imagined the problem too complicated at the beginning, so 
 
 When I finished writing C, I tried python and found it compared to C. python, it's easier in the process of experimenting, and I can quickly figure out how to do it, because I often only have to think about how to convert C code.
 But because python has a more convenient IDE, I will first run in python when trying to try some new methods. It can better show me the location and cause of the error and also provide me with some directions and suggestions for modification.
+But the biggest problem I encountered with python is how to measure the running time of the program. In order to better compare the differences in different programming languages ​​and algorithms, I need to measure each Fibonacci Series that has been calculated instead of just Simply measure the total running time and divide by the calculated amount. To this end, I refer to some methods of software running time calculation in [stackoverflow](https://stackoverflow.com/questions/5622976/how-do-you-calculate-program-run-time-in-python).
+```text
+import timeit
 
+start = timeit.default_timer()
+
+#Your statements here
+
+stop = timeit.default_timer()
+
+print('Time: ', stop - start) 
+```
 
 ### Comparison and Discussion Between Experiences
 
+I conducted an experiment to compare the implementation of the same algorithm in Python and C. I discovered that C runs faster than Python, and the iterative version performs better than the dynamic programming version, even though their Big O notations are the same. However, implementing further optimizations for the recursive version in C would have been more complex and time-consuming than in the iterative version.
+
+In addition, I observed that adding caching to Python was a straightforward process, but the performance difference between Python and C might not justify the effort. I also explored the idea of "precaching" the Fibonacci sequence by generating a file with N numbers up to a high value, which I could load into the program and access in O(1) time. This technique was inspired by the fact that the dynamic programming version ran faster in Python due to the cache remaining in memory.
 
 ## Conclusions / Reflection
+
+In conclusion, the comparison and discussion between the experiences of implementing the Fibonacci sequence algorithm in both Python and C highlighted the trade-offs between simplicity and performance. While C performed faster than Python, the simplicity of adding caching to Python made it a viable option in certain situations. However, the speed difference between the two languages may not make it worth the effort, especially if performance is not a critical factor.
+
+Furthermore, the comparison demonstrated the importance of optimizing algorithms to take advantage of specific language features, as well as the potential benefits of caching and "precaching" techniques in certain situations. By generating a file with N rows up to a high number, it was possible to load it into the program and access it in O(1) time. Although this approach may result in a slower start-up time, it could be beneficial for interactive programs or when the triangle is being used for other computations.
+
+### References
+
+1. GeeksforGeeks. (n.d.). C program for Fibonacci numbers. Retrieved March 6, 2023, from https://www.geeksforgeeks.org/c-program-for-fibonacci-numbers/
+
+2. Stack Overflow. (2011). How do you calculate program run time in Python? Retrieved March 6, 2023, from https://stackoverflow.com/questions/5622976/how-do-you-calculate-program-run-time-in-python
