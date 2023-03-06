@@ -1,15 +1,15 @@
+import time
+
 def fibonacci_iterative(n):
     if n == 0:
         return 0
     elif n == 1:
         return 1
     else:
-        a = 0
-        b = 1
+        a, b = 0, 1
         for i in range(2, n+1):
             c = a + b
-            a = b
-            b = c
+            a, b = b, c
         return b
 
 def fibonacci_recursive(n):
@@ -26,7 +26,32 @@ def fibonacci_dynamic(n):
         fib.append(fib[i-1] + fib[i-2])
     return fib[n]
 
-n = 10
-print("The {}th Fibonacci number using iterative approach is: {}".format(n, fibonacci_iterative(n)))
-print("The {}th Fibonacci number using recursive approach is: {}".format(n, fibonacci_recursive(n)))
-print("The {}th Fibonacci number using dynamic programming approach is: {}".format(n, fibonacci_dynamic(n)))
+n = 40
+
+with open("fibonacci_running_times_python.txt", "w") as file:
+
+    file.write("Running time table for Fibonacci series calculation\n\n")
+    file.write("n\tRecursive\tIterative\tDynamic\n")
+
+    for i in range(n+1):
+        file.write("{}\t".format(i))
+
+        # Recursive approach
+        start_time = time.time()
+        result_recursive = fibonacci_recursive(i)
+        end_time = time.time()
+        file.write("{:.10f}\t".format(end_time - start_time))
+
+        # Iterative approach
+        start_time = time.time()
+        result_iterative = fibonacci_iterative(i)
+        end_time = time.time()
+        file.write("{:.10f}\t".format(end_time - start_time))
+
+        # Dynamic programming approach
+        start_time = time.time()
+        result_dynamic = fibonacci_dynamic(i)
+        end_time = time.time()
+        file.write("{:.10f}\t".format(end_time - start_time))
+
+        file.write("\n")
