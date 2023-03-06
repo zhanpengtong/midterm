@@ -39,7 +39,9 @@ For this analysis, I selected Python for my second language. Python is a well-kn
 
 
 ## Empirical Data & Discussion A
+For all empirical results, I maximize n to n=40. This allows for timely code execution while still being able to run multiple iterations.
 
+As a rule of thumb, the recursive versions of C and Python time out much faster than the other versions. As follows.
 
 ## Language Analysis
 
